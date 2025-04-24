@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+
 *{
     margin: 0;
     padding: 0;
@@ -13,7 +14,7 @@ header {
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    background: #c1c1c1;
+    background: #162938;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,7 +58,18 @@ header {
 
 .texto{
     position:relative;
-    top:100px;
+    top:90px;
+}
+
+.texto a {
+    font-size: 1.20em;
+    line-height: 2.0;
+    color: #162938;
+    text-decoration: none;
+}
+
+.texto a:hover {
+    text-decoration: underline;
 }
 
 .wrapper {
