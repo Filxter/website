@@ -62,7 +62,8 @@ header {
 }
 
 .texto a {
-    font-size: 1.20em;
+    font-size: 1.2em;
+    font-weight: bold;
     line-height: 2.0;
     color: #162938;
     text-decoration: none;
