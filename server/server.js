@@ -34,15 +34,15 @@ app.post('/login', async (req, res) => {
   if (user && await bcrypt.compare(req.body.password, user.password)) {
     req.session.userId = user._id;
     req.session.userName = user.name;
-    res.redirect('/index(users).html');  // 👈 Redirección aquí
+    res.redirect('/index2.html');  // 👈 Redirección aquí
   } else {
     res.send('Credenciales inválidas');
   }
 });
 
-app.get('/index(users)', (req, res) => {
+app.get('/index2', (req, res) => {
   if (req.session.userId) {
-    res.sendFile(__dirname + '/public/index(users).html');
+    res.sendFile(__dirname + '/public/index2.html');
   } else {
     res.redirect('/login.html');  // 👈 Redirige si no está logueado
   }
