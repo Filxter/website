@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="css/style.css">
+        <title>Mi sitio web</title>
+    </head>
+    <body>
+        <header>
+            <h2 class=logo>Mi sitio web</h2>
+            <p class=usuario>Bienvenido, <span id="nombre-usuario">cargando...</span></p>
+            <nav class="navigation">
+                <a href="index.html"><button class="btnLogin-popup">Logoff</button></a>
+            </nav>
+        </header>
+        <p class=texto>Hola</p>
+        <div class="image-grid">
+                <a href="tutoriales/acessoremoto.html"><img src="images/teamviewer.png" title="TeamViewer"></a>
+                <a href="tutoriales/mailserver.html"><img src="images/mail.png" title="Servidores de Correo"></a>
+                <a href="tutoriales/firewall.html"><img src="images/firewall.png" title="Firewall"></a>
+                <a href="tutoriales/4.html"><img src="images/4.png" title="4"></a>
+                <a href="tutoriales/5.html"><img src="images/5.png" title="5"></a>
+                <a href="tutoriales/6.html"><img src="images/6.png" title="6"></a>
+        </div>
+        <footer>
+            <p>Contacto: filipemg02@gmail.com</p>
+        </footer>
+        <script>
+  fetch('/api/usuario')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('nombre-usuario').textContent = data.name;
+    })
+    .catch(() => {
+      document.getElementById('nombre-usuario').textContent = 'Invitado';
+    });
+        </script>
+    </body>
+</html>
