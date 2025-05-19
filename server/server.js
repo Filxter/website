@@ -5,8 +5,13 @@ const User = require('./models/User');
 const app = express();
 require('dotenv').config();
 const session = require('express-session');
+const MemoryStore = require('memorystore')(session);
 
 app.use(session({
+  cookie: { maxAge: 86400000 },
+    store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    }),
   secret: 'mi-clave-secreta', // cámbiala por algo más seguro
   resave: false,
   saveUninitialized: false
