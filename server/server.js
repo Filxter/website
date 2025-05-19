@@ -25,6 +25,7 @@ app.post('/register', async (req, res) => {
 
 app.post('/login', async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
+  
   if (user && await bcrypt.compare(req.body.password, user.password)) {
     req.session.userId = user._id;
     req.session.userName = user.name;
