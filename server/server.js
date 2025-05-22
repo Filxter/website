@@ -33,7 +33,7 @@ app.post('/login', async (req, res) => {
   
   if (user && await bcrypt.compare(req.body.password, user.password)) {
     req.session.userId = user._id;
-    req.session.userName = user.name;
+    req.session.userEmail = user.email;
     res.redirect('/index2.html');  // 👈 Redirección aquí
   } else {
     res.send('Credenciales inválidas');
@@ -56,7 +56,7 @@ app.get('/logout', (req, res) => {
 
 app.get('/api/usuario', (req, res) => {
   if (req.session.userId) {
-    res.json({ name: req.session.userName });
+    res.json({ email: req.session.userEmail });
   } else {
     res.status(401).json({ error: 'No autenticado' });
   }

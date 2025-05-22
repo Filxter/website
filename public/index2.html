@@ -8,7 +8,7 @@
     <body>
         <header>
             <h2 class=logo>Mi sitio web</h2>
-            <p class=usuario>Bienvenido, <span id="nombre-usuario">cargando...</span></p>
+            <p class=usuario>Bienvenido, <span id="usuario-email">cargando...</span></p>
             <nav class="navigation">
                 <a href="index.html"><button class="btnLogin-popup">Logoff</button></a>
             </nav>
@@ -29,10 +29,10 @@
   fetch('/api/usuario')
     .then(res => res.json())
     .then(data => {
-      document.getElementById('nombre-usuario').textContent = data.name;
+      document.getElementById('usuario-email').textContent = data.email;
     })
     .catch(() => {
-      document.getElementById('nombre-usuario').textContent = 'Invitado';
+      document.getElementById('usuario-email').textContent = 'Desconocido';
     });
         </script>
     </body>
