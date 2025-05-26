@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guía Avanzada: hMailServer</title>
+  <link rel="stylesheet" href="../css/tutorial.css">
+</head>
+<body>
+
+  <header>
+    📧 Servidor de Correo hMailServer (Avanzado)
+  </header>
+
+  <div class="main">
+    <div class="sidebar">
+      <h3>Secciones</h3>
+      <a href="#instalacion">Instalación</a>
+      <a href="#dominio">Configuración de Dominio</a>
+      <a href="#cuentas">Cuentas de Correo</a>
+      <a href="#smtp">SMTP Seguro</a>
+      <a href="#antivirus">Antivirus/Antispam</a>
+      <a href="#troubleshoot">Solución de Problemas</a>
+    </div>
+
+    <div class="content">
+      <h1>Configuración Avanzada de hMailServer</h1>
+
+      <h2 id="instalacion">1. Instalación detallada</h2>
+      <ul>
+        <li>Descargar desde <a href="https://www.hmailserver.com/download" target="_blank">hmailserver.com</a></li>
+        <li>Usar base de datos integrada o configurar con MySQL/SQL Server</li>
+        <li>Recordar la clave del administrador</li>
+      </ul>
+
+      <h2 id="dominio">2. Agregar tu dominio</h2>
+      <ol>
+        <li>Abrir hMailServer Administrator</li>
+        <li>Ir a <strong>Domains</strong> → Add → escribe tu dominio (ej. midominio.com)</li>
+        <li>Activa la casilla <em>Enabled</em></li>
+      </ol>
+
+      <h2 id="cuentas">3. Crear cuentas de correo</h2>
+      <ol>
+        <li>En el dominio, ir a <strong>Accounts</strong> → Add</li>
+        <li>Ejemplo: <code>usuario@midominio.com</code></li>
+        <li>Asigna una contraseña fuerte</li>
+      </ol>
+
+      <h2 id="smtp">4. Configuración de SMTP seguro</h2>
+      <ul>
+        <li>Activa SSL/TLS desde <strong>Settings &gt; Advanced &gt; SSL certificates</strong></li>
+        <li>Importa tu certificado SSL válido</li>
+        <li>En <strong>Protocols &gt; SMTP</strong>, configura puertos 465 y 587</li>
+      </ul>
+
+      <h2 id="antivirus">5. Integración con antivirus y filtros</h2>
+      <ul>
+        <li>Usa ClamAV o software externo con ejecución por script</li>
+        <li>Activa Spam Protection desde Settings → Anti-spam</li>
+        <li>Habilita SPF, DKIM y DNS blacklists</li>
+      </ul>
+
+      <h2 id="troubleshoot">6. Problemas comunes</h2>
+      <ul>
+        <li><strong>SMTP bloqueado:</strong> revisa el firewall y puerto 25</li>
+        <li><strong>Correo va a spam:</strong> asegúrate de configurar SPF y DKIM</li>
+        <li><strong>Los correos no salen:</strong> revisa la cola de mensajes</li>
+      </ul>
+        <br>
+         <div class="volver" style="font-size: large">
+                        <a href="../index2.html">Volver</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Contacto: filipemg02@gmail.com
+  </footer>
+
+</body>
+</html>

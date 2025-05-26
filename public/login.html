@@ -1,44 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Login</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <header>
-      <h2 class=logo>Login</h2>
-      </header>
-        <div class="wrapper">
-            <div class="form-box login">
-                <h2>Login</h2>
-                <form action="/login" method="POST">
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                        <input type="text" name="email" required />
-                        <label>E-mail</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" name="password" required />
-                        <label>Contraseña</label>
-                    </div>
-                    <div class="volver">
-                        <a href="index.html">Volver</a>
-                        <a href="register.html">No tienes una cuenta?</a>
-                    </div>
-                    <button type="submit" class="btn">Iniciar Sesión</button>
-                </form>
-            </div>
-        </div>
-        
-        
-        
-        
-        <footer>
-            <p>Contacto: filipemg02@gmail.com</p>
-      </footer>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iniciar Sesión</title> <link rel="stylesheet" href="css/logreg.css">
+</head>
+<body>
+
+  <header>
+    <h2>Login</h2>
+  </header>
+
+  <main>
+    <div class="login-box">
+      <h3>Iniciar Sesión</h3>
+      <form action="/login" method="POST">
+        <input type="text" name="email" placeholder="Correo electrónico" required />
+        <input type="password" name="password" placeholder="Contraseña" required />
+        <button type="submit">Entrar</button>
+      </form>
+      <div class="link">
+        ¿No tienes cuenta? <a href="/register">Regístrate</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+        Contacto: filipemg02@gmail.com
+  </footer>
+
+</body>
 </html>
