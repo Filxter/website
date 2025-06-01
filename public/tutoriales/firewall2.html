@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tutorial IPCop (Avanzado)</title>
+  <link rel="stylesheet" href="../css/tutorial.css">
+</head>
+<body>
+
+  <header>
+    <h2>👮 IPCop Firewall (Avanzado)</h2>
+  </header>
+
+  <div class="main">
+    <div class="sidebar">
+      <nav>
+          <h3>Secciones</h3>
+          <a href="#requisitos">Requisitos</a>
+          <a href="#instalacion">Instalación</a>
+          <a href="#web">Accesso</a>
+          <a href="#top">Topología</a>
+          <a href="#config">Configuraciones</a>
+          <a href="#consejo">Consejos</a>
+          <a href="#addon">Addons</a>
+      </nav>
+    </div>
+
+    <div class=content>
+        <section>
+        <h2>¿Qué es IPCop?</h2>
+        <p>IPCop es una solución de firewall basada en Linux que convierte un equipo común en un dispositivo de seguridad para proteger redes locales contra amenazas externas. Su interfaz amigable y funciones potentes lo hacen ideal para usuarios domésticos y pequeñas oficinas.</p>
+      </section>
+
+      <section>
+        <h2 id=requisitos>Requisitos Mínimos</h2>
+        <ul>
+          <li>CPU de 300 MHz</li>
+          <li>128 MB de RAM</li>
+          <li>1 GB de almacenamiento</li>
+          <li>2 interfaces de red (NICs)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 id=instalacion>Pasos de Instalación</h2>
+        <ol>
+          <li>Descarga la ISO desde el sitio oficial.</li>
+          <li>Graba la imagen en un CD o configúrala en una máquina virtual.</li>
+          <li>Arranca el equipo desde ese medio.</li>
+          <li>Sigue las instrucciones del asistente de instalación.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2 id=web>Acceso a la Interfaz Web</h2>
+        <p>Una vez instalado, accede desde un navegador en la red GREEN usando la dirección:</p>
+        <pre>https://192.168.1.1:8443</pre>
+        <p>Usuario: <strong>admin</strong></p>
+      </section>
+
+      <section>
+        <h2 id=top>Topología de Red Recomendada</h2>
+        <p>Una configuración típica incluye una zona RED (internet), GREEN (LAN), y opcionalmente ORANGE (DMZ) o BLUE (WiFi). Esto permite segmentar el tráfico y aplicar políticas de seguridad más precisas.</p>
+        <pre>
+Internet ----[RED] IPCop [GREEN]---- LAN (192.168.1.0/24)
+                        |
+                      [ORANGE]
+                        |
+                   Servidor Web DMZ
+        </pre>
+      </section>
+
+      <section>
+        <h2 id=config>Configuraciones Clave en WebGUI</h2>
+        <ul>
+          <li><strong>Firewall → Port Forwarding:</strong> Redirigir puertos para servidores internos.</li>
+          <li><strong>Services → DHCP Server:</strong> Asignación automática de IPs a dispositivos.</li>
+          <li><strong>VPN → OpenVPN:</strong> Acceso remoto seguro a la red LAN.</li>
+          <li><strong>Logs:</strong> Monitoreo detallado de conexiones y amenazas.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 id=consejo>Consejos de Seguridad</h2>
+        <ul>
+          <li>Desactiva el acceso SSH desde la zona RED.</li>
+          <li>Realiza backups frecuentes del sistema IPCop.</li>
+          <li>Utiliza la zona ORANGE para cualquier servidor que requiera acceso desde internet.</li>
+          <li>Limita el acceso a la WebGUI solo a administradores autorizados.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 id=addon>Add-ons Recomendados</h2>
+        <p>IPCop admite extensiones para mejorar la funcionalidad. Algunas útiles incluyen:</p>
+        <ul>
+          <li><strong>Advanced Proxy:</strong> Mejora del proxy con filtrado por grupo y autenticación.</li>
+          <li><strong>URL Filter:</strong> Control parental y filtrado de sitios web.</li>
+          <li><strong>Copfilter:</strong> Filtro de virus y spam para correo electrónico.</li>
+        </ul>
+      </section>
+        <br>
+        <div class="volver" style="font-size: large">
+                        <a href="../index2.html">Volver</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Tu Nombre o Sitio Web</p>
+  </footer>
+
+</body>
+</html>
