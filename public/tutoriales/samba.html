@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Compartir Recursos con Samba</title>
+  <link rel="stylesheet" href="../css/tutorial.css">
+</head>
+<body>
+
+<header>
+  <h2>📡 Compartir Recursos con Samba</h2>
+</header>
+
+  <div class=content>
+    <section id=samba>
+      <h2>¿Qué es Samba?</h2>
+      <p>Samba es una herramienta que permite compartir carpetas y archivos entre sistemas Linux y Windows en una red local.</p>
+    </section>
+
+    <section id=install>
+      <h2>Instalación de Samba</h2>
+      <pre>sudo apt update
+sudo apt install samba</pre>
+    </section>
+
+    <section id=carpeta>
+      <h2>Crear una Carpeta Compartida</h2>
+      <pre>
+sudo mkdir -p /srv/compartido
+sudo chown nobody:nogroup /srv/compartido
+sudo chmod 0775 /srv/compartido
+      </pre>
+    </section>
+
+    <section id=config>
+      <h2>Editar el archivo de configuración</h2>
+      <pre>
+sudo nano /etc/samba/smb.conf
+      </pre>
+      <p>Agrega al final del archivo:</p>
+      <pre>
+[Compartido]
+  path = /srv/compartido
+  browseable = yes
+  read only = no
+  guest ok = yes
+      </pre>
+    </section>
+
+    <section id=reini>
+      <h2>Reiniciar el servicio</h2>
+      <pre>sudo systemctl restart smbd</pre>
+    </section>
+
+    <p>Ahora puedes acceder desde otro equipo usando la dirección IP: <code>\\IP-del-servidor\Compartido</code></p>
+      <br>
+<div class="volver" style="font-size: large">
+                        <a href="../index.html">Volver</a>
+      </div>
+
+  </div>
+
+<footer>
+  Contacto: filipemg02@gmail.com
+</footer>
+
+</body>
+</html>
